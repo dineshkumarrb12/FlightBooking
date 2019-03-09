@@ -1,4 +1,4 @@
-package FlightBooking_Models;
+package com.flight.booking.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Select_Flight {
+public class SelectFlight {
 
 	
 	
@@ -22,7 +22,7 @@ public class Select_Flight {
 	
 	WebDriver driver;
 	WebDriverWait wait=new WebDriverWait(driver,600); //10 mins
-	public Select_Flight(WebDriver driver)
+	public SelectFlight(WebDriver driver)
 	{
 		this.driver=driver;
 	}

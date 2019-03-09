@@ -1,4 +1,4 @@
-package FlightBooking_Models;
+package com.flight.booking.pages;
 
 import java.util.HashMap;
 
@@ -24,20 +24,21 @@ public class FlightFinder {
 	public By serive_business=By.xpath("//input[@name='servClass' and @value='Business']");
 	public By serive_fistclass=By.xpath("//input[@name='servClass' and @value='First']");
 	public By airline=By.name("airline");
-	WebDriverWait wait=new WebDriverWait(driver,600); //10 mins
+	WebDriverWait wait=null;
 	public FlightFinder(WebDriver driver)
 	{
 		this.driver=driver;
+		this.wait=new WebDriverWait(driver,600);
 	}
 	public void flight_details(HashMap<String, String> flightinput)
 	{
-		//String inputtype= flightinput.get("Type");//instead of this i gave directly in if case(is there any change of assigning to variable and directly using)
-		if(flightinput.get("Type").equalsIgnoreCase("Round Trip"))
+		String inputtype= flightinput.get("Type");	
+		if(inputtype.equalsIgnoreCase("Round Trip"))
 		{
 			WebElement round_tripe= driver.findElement(typeRound_tripe);
 			round_tripe.click();
 		}
-		else if(flightinput.get("Type").equalsIgnoreCase("One Way")) 
+		else if(inputtype.equalsIgnoreCase("One Way")) 
 		{
 			WebElement 	oneway=driver.findElement(typeOneway_trip);
 			oneway.click();
@@ -45,32 +46,32 @@ public class FlightFinder {
 		//String passanger_input= flightinput.get("passangers");
 		WebElement passanger= driver.findElement(passanger_no);
 		Select selectpassanger= new Select(passanger);
-		selectpassanger.selectByValue(flightinput.get("passangers"));
+		selectpassanger.selectByVisibleText(flightinput.get("passangers"));
 
 		WebElement depart_from=driver.findElement(Depature_from);
 		Select fromcity= new Select(depart_from);
-		fromcity.selectByValue(flightinput.get("departfrom"));
+		fromcity.selectByVisibleText(flightinput.get("departfrom"));
 
 		WebElement depart_onmonth= driver.findElement(depature_month);
 		Select departmonth= new Select(depart_onmonth);
-		departmonth.selectByValue(flightinput.get("departmonth"));
+		departmonth.selectByVisibleText(flightinput.get("departmonth"));
 
 		WebElement depart_onday= driver.findElement(depature_date);
 		Select departday= new Select(depart_onday);
-		departday.selectByValue(flightinput.get("departday"));
+		departday.selectByVisibleText(flightinput.get("departday"));
 
 
 		WebElement arrive_to=driver.findElement(arriving_in);
 		Select arrivecity= new Select(arrive_to);
-		arrivecity.selectByValue("arrivecity");
+		arrivecity.selectByVisibleText("arrivecity");
 
 		WebElement arrive_returnmonth=driver.findElement(returning_month);
 		Select arrive_month= new Select(arrive_returnmonth);
-		arrive_month.selectByValue(flightinput.get("arrivingmonth"));
+		arrive_month.selectByVisibleText(flightinput.get("arrivingmonth"));
 
 		WebElement arrive_returnday=driver.findElement(returning_month);
 		Select arrive_day= new Select(arrive_returnday);
-		arrive_day.selectByValue(flightinput.get("arrivingday"));
+		arrive_day.selectByVisibleText(flightinput.get("arrivingday"));
 
 	}
 	public void preferences(String inputservice, String inputairline)
