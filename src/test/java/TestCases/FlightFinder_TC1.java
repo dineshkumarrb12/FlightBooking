@@ -19,7 +19,7 @@ public static void main(String[] args) {
 			System.out.println(""+path);
 			System.setProperty("webdriver.chrome.driver",path);
 			driver=new ChromeDriver();
-			driver.manage().timeouts().implicitlyWaiit(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.get("http://newtours.demoaut.com/mercuryreservation.php");
 
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

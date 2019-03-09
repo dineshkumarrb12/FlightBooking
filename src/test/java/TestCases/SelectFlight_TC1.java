@@ -48,8 +48,8 @@ public class SelectFlight_TC1 {
 
 		
 	//select flight page
-	SelectFlight flight=new SelectFlight(driver);
-	flight.select_flight("Unified Airlines 363", "Pangea Airlines 632");
-	flight.book_flight_continue();
+	SelectFlight flight1=new SelectFlight(driver);
+	flight1.select_flight("Unified Airlines 363", "Pangea Airlines 632");
+	flight1.book_flight_continue();
 }
 }
