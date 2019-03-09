@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FlightFinder {
+public class FlightFinder { //6KB for 60 By objects
 	WebDriver driver;	
 	public By typeRound_tripe= By.xpath("//input[@value='roundtrip']");
 	public By typeOneway_trip= By.xpath("//input[@value='oneway']");

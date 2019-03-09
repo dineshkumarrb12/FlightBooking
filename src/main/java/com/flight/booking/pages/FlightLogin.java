@@ -7,8 +7,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FlightLogin {
 
-	private By login_name= By.name("userName");
-	public By login_password= By.name("password");
+	//Locators
+	private By txtUserName= By.name("userName");
+	public By txtPassword= By.name("password");
+	public By btnSignIn = By.name("login");
+	
 	WebDriver driver;
 	WebDriverWait wait;
 	public FlightLogin(WebDriver driver)
@@ -21,11 +24,11 @@ public class FlightLogin {
 	{
 		wait.until(ExpectedConditions.titleContains("Welcome: Mercury Tours"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='login']")));
-		WebElement login_username=driver.findElement(login_name);
+		WebElement login_username=driver.findElement(txtUserName); //Webelement
 		login_username.sendKeys(username);
-		WebElement login_userpassword=driver.findElement(login_password);
+		WebElement login_userpassword=driver.findElement(txtPassword);
 		login_userpassword.sendKeys(password);
-		WebElement signin= driver.findElement(By.name("login"));
+		WebElement signin= driver.findElement(btnSignIn);
 		signin.click();
 	}
 }
