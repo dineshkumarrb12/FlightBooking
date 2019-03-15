@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.flight.booking.pages.FlightFinder;
-import com.flight.booking.pages.FlightLogin;
+import com.flight.booking.pages.FlightLoginPF;
 import com.flight.booking.pages.SelectFlight;
 
 
@@ -27,7 +27,7 @@ public class SelectFlight_TC1 {
 	driver.get("http://newtours.demoaut.com/mercuryreservation.php");
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
-	FlightLogin login=new FlightLogin(driver);
+	FlightLoginPF login=new FlightLoginPF(driver);
 	
 	//login page
 	login.login("dineshkumartest", "dineshtest");

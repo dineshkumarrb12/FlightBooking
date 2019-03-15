@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.flight.booking.pages.FlightFinder;
-import com.flight.booking.pages.FlightLogin;
+import com.flight.booking.pages.FlightLoginPF;
 public class FlightFinder_TC1 {
 public static void main(String[] args) {
 		{
@@ -27,7 +27,7 @@ public static void main(String[] args) {
 			WebDriverWait wait=new WebDriverWait(driver,600); //10 mins
 			wait.until(ExpectedConditions.titleContains("Welcome: Mercury Tours"));
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='login']")));
-			FlightLogin login=new FlightLogin(driver);
+			FlightLoginPF login=new FlightLoginPF(driver);
 			login.login("dineshkumartest", "dineshtest");
 			FlightFinder flightdetails=new FlightFinder(driver);
 			HashMap<String,String> flightinput= new HashMap<String,String>();

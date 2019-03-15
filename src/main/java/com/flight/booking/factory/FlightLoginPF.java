@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FlightLogin {
+public class FlightLoginPF {
 	@FindBy(name="userName") //Locator
-	private WebElement txtUserName; //Declaration
+	 WebElement txtUserName; //Declaration
 	@FindBy(name="password")
-	private WebElement txtPassword;
+	 WebElement txtPassword;
 	@FindBy(name="login")
-	private WebElement btnLogin;
+	 WebElement btnLogin;
 	
 	//css locator --> fastest (best option)
 	// id
@@ -23,22 +23,21 @@ public class FlightLogin {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	public FlightLogin(WebDriver driver) {
+	public FlightLoginPF(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, 5);
 	}
-	
 	public void login(String username, String password) {
 		//wait
 		wait.until(ExpectedConditions.titleContains("Welcome: Mercury Tours"));
-		wait.until(ExpectedConditions.visibilityOf(btnLogin));
-		
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='login']")));
+		System.out.println("login method started");
+		System.out.println("username    "+username);
+		System.out.println("password\n    "+password);
 		txtUserName.sendKeys(username); //Lazy Initialization
 		txtPassword.sendKeys(password);
 		btnLogin.click();
-		
 		WebElement profileLink = driver.findElement(By.linkText("Welcome, " + username));
 		profileLink.click();
-		
 	}
 }

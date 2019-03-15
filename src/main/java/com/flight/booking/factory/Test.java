@@ -11,7 +11,7 @@ public class Test {
 		DriverSupplier supplier = new DriverSupplier();
 		WebDriver driver = supplier.getdriver();
 		//Page Initialization using Page Factory
-		FlightLogin login = PageFactory.initElements(driver, FlightLogin.class);
+		FlightLoginPF login = PageFactory.initElements(driver, FlightLoginPF.class);
 		//login.login("dineshkumartest", "dineshtest");
 		login.login("bhuvanesh", "dineshtest");
 	}

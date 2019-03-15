@@ -4,14 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class FlightLogin {
-
+public class FlightLogin
+{
 	//Locators
 	private By txtUserName= By.name("userName");
 	public By txtPassword= By.name("password");
 	public By btnSignIn = By.name("login");
-	
 	WebDriver driver;
 	WebDriverWait wait;
 	public FlightLogin(WebDriver driver)
@@ -19,7 +17,6 @@ public class FlightLogin {
 		this.driver=driver;
 		this.wait=new WebDriverWait(driver,600); //10 mins
 	}
-	
 	public void login(String username, String password)
 	{
 		wait.until(ExpectedConditions.titleContains("Welcome: Mercury Tours"));

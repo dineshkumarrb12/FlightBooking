@@ -7,9 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectFlight {
-
-	
-	
 	By depart_flight1= By.xpath("//input[@value='Blue Skies Airlines$360$270$5:03]");
 	By depart_flight2= By.xpath("//input[@value='Blue Skies Airlines$361$271$7:10']");
 	By depart_flight3= By.xpath("//input[@value='Pangea Airlines$362$274$9:17']");
