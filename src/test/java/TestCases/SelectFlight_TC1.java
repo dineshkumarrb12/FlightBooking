@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.flight.booking.factory.FlightLoginPF;
 import com.flight.booking.pages.FlightFinder;
-import com.flight.booking.pages.FlightLoginPF;
 import com.flight.booking.pages.SelectFlight;
 
 

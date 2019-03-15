@@ -1,13 +1,15 @@
 package TestCases;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.flight.booking.factory.FlightLoginPF;
 import com.flight.booking.pages.FlightFinder;
-import com.flight.booking.pages.FlightLoginPF;
 public class FlightFinder_TC1 {
 public static void main(String[] args) {
 		{
