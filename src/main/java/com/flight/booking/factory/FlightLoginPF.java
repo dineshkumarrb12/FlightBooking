@@ -39,5 +39,6 @@ public class FlightLoginPF {
 		btnLogin.click();
 		WebElement profileLink = driver.findElement(By.linkText("Welcome, " + username));
 		profileLink.click();
+		
 	}
 }
